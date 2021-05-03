@@ -1,1 +1,114 @@
-<p>all-items works!</p>
+<pre style="color:#ffffff">
+<!-- {{categories | json }} -->
+</pre>
+
+<!-- <input  #myname value="asdasd"> -->
+ 
+<ul>
+    <li *ngFor="let item of categories"> <pre style="color : #fff"> {{item.arName | json}} </pre> </li> 
+</ul>
+
+
+ 
+<div class="page-content">
+    <div class="container">
+
+        <div class="header-container">
+            <div class="logo">
+                <img class="img-fluid" src="assets/images/logo.png">
+                <h4> Autum & winter Menu </h4>
+            </div><!-- logo -->
+        </div> <!-- header-container -->
+
+        <div class="slider-container">
+
+          <div class="owl-carousel owl-theme">
+
+            <div class="item" *ngFor="let item of categories">
+                <div class="item-content active">
+                    <a href="#">
+                        <img class="img-fluid" src="assets/images/category.jpg">
+                        <h4> {{item.arName}} </h4>
+                    </a>
+                </div>
+            </div>  
+
+
+            <!-- <div class="item" >
+                <div class="item-content active">
+                    <a href="#">
+                        <img class="img-fluid" src="assets/images/category.jpg">
+                        <h4> asd </h4>
+                    </a>
+                </div> 
+            </div>  -->
+ 
+
+          </div>  <!-- owl-carousel owl-theme -->
+        </div> <!-- slider-container -->
+        <div class="menu-container">
+            <div class="all-items"> 
+              <div [routerLink]="'/one-item'" class="one-item">
+                  <div class="item-image">
+                      <img class="img-fluid" src="assets/images/item.jpg">
+                  </div> <!-- item-image -->
+                  <div class="item-details">
+                      <h4> hot chocolate </h4>
+                      <p> <span class="price"> 55 </span> <span class="currency">EGP</span> </p>
+                  </div> <!-- item-details -->
+              </div> <!-- one-item --> 
+              <div [routerLink]="'/one-item'" class="one-item">
+                  <div class="item-image">
+                      <img class="img-fluid" src="assets/images/item.jpg">
+                  </div> <!-- item-image -->
+                  <div class="item-details">
+                      <h4> hot chocolate </h4>
+                      <p> <span class="price"> 55 </span> <span class="currency">EGP</span> </p>
+                  </div> <!-- item-details -->
+              </div> <!-- one-item --> 
+              <div [routerLink]="'/one-item'" class="one-item">
+                  <div class="item-image">
+                      <img class="img-fluid" src="assets/images/item.jpg">
+                  </div> <!-- item-image -->
+                  <div class="item-details">
+                      <h4> hot chocolate </h4>
+                      <p> <span class="price"> 55 </span> <span class="currency">EGP</span> </p>
+                  </div> <!-- item-details -->
+              </div> <!-- one-item --> 
+              <div [routerLink]="'/one-item'" class="one-item">
+                  <div class="item-image">
+                      <img class="img-fluid" src="assets/images/item.jpg">
+                  </div> <!-- item-image -->
+                  <div class="item-details">
+                      <h4> hot chocolate </h4>
+                      <p> <span class="price"> 55 </span> <span class="currency">EGP</span> </p>
+                  </div> <!-- item-details -->
+              </div> <!-- one-item --> 
+              <div [routerLink]="'/one-item'" class="one-item">
+                  <div class="item-image">
+                      <img class="img-fluid" src="assets/images/item.jpg">
+                  </div> <!-- item-image -->
+                  <div class="item-details">
+                      <h4> hot chocolate </h4>
+                      <p> <span class="price"> 55 </span> <span class="currency">EGP</span> </p>
+                  </div> <!-- item-details -->
+              </div> <!-- one-item --> 
+              <div [routerLink]="'/one-item'" class="one-item">
+                  <div class="item-image">
+                      <img class="img-fluid" src="assets/images/item.jpg">
+                  </div> <!-- item-image -->
+                  <div class="item-details">
+                      <h4> hot chocolate </h4>
+                      <p> <span class="price"> 55 </span> <span class="currency">EGP</span> </p>
+                  </div> <!-- item-details -->
+              </div> <!-- one-item --> 
+            </div> <!-- all-items -->
+        </div> <!-- menu-container -->
+    </div> <!-- container -->
+
+    <div id="footer">
+        <a class="change-lang" href="#"> Change Lang </a>
+        <a class="change-theme" href="#"> Change Theme </a>
+        <p> powered by egyDigital </p>
+    </div>
+</div> <!-- page-content -->

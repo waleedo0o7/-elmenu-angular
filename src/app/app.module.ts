@@ -6,6 +6,11 @@ import { AppComponent } from './app.component';
 import { AllItemsComponent } from './all-items/all-items.component';
 import { OneItemComponent } from './one-item/one-item.component';
 
+import { HttpClientModule } from "@angular/common/http"
+import { FormsModule } from '@angular/forms';
+
+ 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -13,10 +18,11 @@ import { OneItemComponent } from './one-item/one-item.component';
     OneItemComponent
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule
+    [BrowserModule, FormsModule],
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
