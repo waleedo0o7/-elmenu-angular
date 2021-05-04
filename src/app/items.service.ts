@@ -4,12 +4,19 @@ import {HttpClient, HttpClientModule} from '@angular/common/http'
   providedIn: 'root'
 })
 export class ItemsService {
+  restaurant: Object;
+  items: any;
 
   constructor( private http:HttpClient) { }
 
   getData(){
-    let url = 'http://67.225.214.75:50454/MyMenu/GetResturantInfo?Id=4';
-    return this.http.get(url);
+    let url = 'http://menuapi.egydigital.net/MyMenu/GetResturantInfo';
+    return this.http.post(
+      url,
+      {"companyServiceId": 4}
+    );
   }
+
+
   
 }

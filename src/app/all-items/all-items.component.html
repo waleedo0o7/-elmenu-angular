@@ -4,12 +4,10 @@
 
 <!-- <input  #myname value="asdasd"> -->
  
-<ul>
+<!-- <ul>
     <li *ngFor="let item of categories"> <pre style="color : #fff"> {{item.arName | json}} </pre> </li> 
-</ul>
+</ul> -->
 
-
- 
 <div class="page-content">
     <div class="container">
 
@@ -24,90 +22,36 @@
 
           <div class="owl-carousel owl-theme">
 
-            <div class="item" *ngFor="let item of categories">
-                <div class="item-content active">
-                    <a href="#">
-                        <img class="img-fluid" src="assets/images/category.jpg">
-                        <h4> {{item.arName}} </h4>
-                    </a>
+            <div class="item" *ngFor="let item of categories ; let index = index ">
+                <div class="item-content active" (click)=getCategoryItems(index)> 
+                        <img class="img-fluid" src="assets/images/{{item.categoryImage}}">
+                        <h4>  {{item.arName}} </h4> 
                 </div>
-            </div>  
-
-
-            <!-- <div class="item" >
-                <div class="item-content active">
-                    <a href="#">
-                        <img class="img-fluid" src="assets/images/category.jpg">
-                        <h4> asd </h4>
-                    </a>
-                </div> 
-            </div>  -->
+            </div>
  
 
           </div>  <!-- owl-carousel owl-theme -->
         </div> <!-- slider-container -->
         <div class="menu-container">
-            <div class="all-items"> 
-              <div [routerLink]="'/one-item'" class="one-item">
+            <h3 class="text-center"> {{categoryName}} </h3>
+            <div class="all-items">
+
+              <div [routerLink]="'/one-item'" class="one-item" *ngFor="let item of allItems">
                   <div class="item-image">
                       <img class="img-fluid" src="assets/images/item.jpg">
                   </div> <!-- item-image -->
                   <div class="item-details">
-                      <h4> hot chocolate </h4>
-                      <p> <span class="price"> 55 </span> <span class="currency">EGP</span> </p>
+                      <h4> {{item.arName}} </h4>
+                      <p> <span class="price"> {{item.price}} </span> <span class="currency">EGP</span> </p>
                   </div> <!-- item-details -->
               </div> <!-- one-item --> 
-              <div [routerLink]="'/one-item'" class="one-item">
-                  <div class="item-image">
-                      <img class="img-fluid" src="assets/images/item.jpg">
-                  </div> <!-- item-image -->
-                  <div class="item-details">
-                      <h4> hot chocolate </h4>
-                      <p> <span class="price"> 55 </span> <span class="currency">EGP</span> </p>
-                  </div> <!-- item-details -->
-              </div> <!-- one-item --> 
-              <div [routerLink]="'/one-item'" class="one-item">
-                  <div class="item-image">
-                      <img class="img-fluid" src="assets/images/item.jpg">
-                  </div> <!-- item-image -->
-                  <div class="item-details">
-                      <h4> hot chocolate </h4>
-                      <p> <span class="price"> 55 </span> <span class="currency">EGP</span> </p>
-                  </div> <!-- item-details -->
-              </div> <!-- one-item --> 
-              <div [routerLink]="'/one-item'" class="one-item">
-                  <div class="item-image">
-                      <img class="img-fluid" src="assets/images/item.jpg">
-                  </div> <!-- item-image -->
-                  <div class="item-details">
-                      <h4> hot chocolate </h4>
-                      <p> <span class="price"> 55 </span> <span class="currency">EGP</span> </p>
-                  </div> <!-- item-details -->
-              </div> <!-- one-item --> 
-              <div [routerLink]="'/one-item'" class="one-item">
-                  <div class="item-image">
-                      <img class="img-fluid" src="assets/images/item.jpg">
-                  </div> <!-- item-image -->
-                  <div class="item-details">
-                      <h4> hot chocolate </h4>
-                      <p> <span class="price"> 55 </span> <span class="currency">EGP</span> </p>
-                  </div> <!-- item-details -->
-              </div> <!-- one-item --> 
-              <div [routerLink]="'/one-item'" class="one-item">
-                  <div class="item-image">
-                      <img class="img-fluid" src="assets/images/item.jpg">
-                  </div> <!-- item-image -->
-                  <div class="item-details">
-                      <h4> hot chocolate </h4>
-                      <p> <span class="price"> 55 </span> <span class="currency">EGP</span> </p>
-                  </div> <!-- item-details -->
-              </div> <!-- one-item --> 
+
             </div> <!-- all-items -->
         </div> <!-- menu-container -->
     </div> <!-- container -->
 
     <div id="footer">
-        <a class="change-lang" href="#"> Change Lang </a>
+        <a class="change-lang" href="#"> Change Lang </a> - 
         <a class="change-theme" href="#"> Change Theme </a>
         <p> powered by egyDigital </p>
     </div>

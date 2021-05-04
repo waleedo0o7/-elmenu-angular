@@ -14,19 +14,28 @@ declare var $: any;
 export class AllItemsComponent implements OnInit { 
 
   restaurant;
-  categories;
-  
+  categories = [];
+  categoryName;
+  allItems;
+
 
   constructor(private items:ItemsService) {
     this.items.getData().subscribe(data=>{
       this.restaurant =  data;
       this.categories = this.restaurant.data.categories;
+      this.allItems = this.categories[0].items;
+      this.categoryName = this.categories[0].arName;
       this.runOwl();
     })
   }
 
+  getCategoryItems(id){
+    this.allItems = this.categories[id].items;
+    this.categoryName = this.categories[id].arName;
+    console.log(id)
+    console.log(this.allItems)
+  }
 
-  
 
   runOwl(){
     setTimeout( function(){
