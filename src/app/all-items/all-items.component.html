@@ -24,8 +24,8 @@
 
             <div class="item" *ngFor="let item of categories ; let index = index ">
                 <div class="item-content active" (click)=getCategoryItems(index)> 
-                        <img class="img-fluid" src="assets/images/{{item.categoryImage}}">
-                        <h4>  {{item.arName}} </h4> 
+                    <img class="img-fluid" src="assets/images/{{item.categoryImage}}">
+                    <h4>  {{item.arName}} </h4> 
                 </div>
             </div>
  
@@ -36,8 +36,8 @@
             <h3 class="text-center"> {{categoryName}} </h3>
             <div class="all-items">
 
-              <div [routerLink]="'/one-item'" class="one-item" *ngFor="let item of allItems">
-                  <div class="item-image">
+              <div class="one-item" *ngFor="let item of allItems">
+                  <div (click)=sendItemData(item) class="item-image">
                       <img class="img-fluid" src="assets/images/item.jpg">
                   </div> <!-- item-image -->
                   <div class="item-details">

@@ -1,5 +1,6 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { Router } from '@angular/router';
 import * as $ from 'jquery'
 import { ItemsService } from '../items.service';
 
@@ -19,7 +20,7 @@ export class AllItemsComponent implements OnInit {
   allItems;
 
 
-  constructor(private items:ItemsService) {
+  constructor(private items:ItemsService, private _router: Router) {
     this.items.getData().subscribe(data=>{
       this.restaurant =  data;
       this.categories = this.restaurant.data.categories;
@@ -35,6 +36,16 @@ export class AllItemsComponent implements OnInit {
     console.log(id)
     console.log(this.allItems)
   }
+
+  // sendItemData(itemData){
+  //   this._router.navigateByUrl("/one-item");
+  //   return this.items.sendItemData(itemData);
+  // }
+  
+  sendItemData(itemData){
+    this._router.navigate(['/one-item',{data:JSON.stringify(itemData)}] );
+  }
+
 
 
   runOwl(){

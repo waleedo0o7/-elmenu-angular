@@ -17,6 +17,10 @@ export class ItemsService {
     );
   }
 
+  oneItemData: any;
 
+  sendItemData(itemData){
+    this.oneItemData = itemData
+  }
   
 }
