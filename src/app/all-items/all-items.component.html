@@ -1,6 +1,6 @@
-<pre style="color:#ffffff">
-<!-- {{categories | json }} -->
-</pre>
+<!-- <pre style="color:#ffffff">
+{{restaurant | json }}
+</pre> -->
 
 <!-- <input  #myname value="asdasd"> -->
  
@@ -8,13 +8,15 @@
     <li *ngFor="let item of categories"> <pre style="color : #fff"> {{item.arName | json}} </pre> </li> 
 </ul> -->
 
+
 <div class="page-content">
-    <div class="container">
+    <div class="container" style="position: relative;">
+        <i (click)=showMenu() class="fas fa-bars"></i>
 
         <div class="header-container">
             <div class="logo">
                 <img class="img-fluid" src="assets/images/logo.png">
-                <h4> Autum & winter Menu </h4>
+                <h4>{{restaurant.data.arName}}</h4>
             </div><!-- logo -->
         </div> <!-- header-container -->
 
@@ -25,7 +27,7 @@
             <div class="item" *ngFor="let item of categories ; let index = index ">
                 <div class="item-content active" (click)=getCategoryItems(index)> 
                     <img class="img-fluid" src="assets/images/{{item.categoryImage}}">
-                    <h4>  {{item.arName}} </h4> 
+                    <h4> {{item.arName}} </h4> 
                 </div>
             </div>
  
@@ -36,12 +38,12 @@
             <h3 class="text-center"> {{categoryName}} </h3>
             <div class="all-items">
 
-              <div class="one-item" *ngFor="let item of allItems">
-                  <div (click)=sendItemData(item) class="item-image">
-                      <img class="img-fluid" src="assets/images/item.jpg">
+              <div class="one-item" *ngFor="let item of allItems" (click)=sendItemData(item)>
+                  <div class="item-image">
+                      <img class="img-fluid" src="assets/images/{{item.itemImage}}">
                   </div> <!-- item-image -->
                   <div class="item-details">
-                      <h4> {{item.arName}} </h4>
+                      <h4>  {{item.arName}} </h4>
                       <p> <span class="price"> {{item.price}} </span> <span class="currency">EGP</span> </p>
                   </div> <!-- item-details -->
               </div> <!-- one-item --> 
@@ -50,9 +52,4 @@
         </div> <!-- menu-container -->
     </div> <!-- container -->
 
-    <div id="footer">
-        <a class="change-lang" href="#"> Change Lang </a> - 
-        <a class="change-theme" href="#"> Change Theme </a>
-        <p> powered by egyDigital </p>
-    </div>
 </div> <!-- page-content -->

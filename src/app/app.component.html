@@ -1,1 +1,23 @@
-<router-outlet></router-outlet>
+<div id="main-menu">
+    <div class="layer layer1"></div>
+    <div class="layer layer2"></div>
+    <div class="layer layer3">
+        <div class="menu-content">
+            <ul>
+                <li>  <a class="change-lang"  (click)=changeLang();hideMenu()> Switch Language </a> </li>
+                <li>  <a class="change-theme" (click)=changeTheme();hideMenu()> Switch Theme </a> </li>
+            </ul>
+            
+            
+        </div>
+    </div>
+</div>
+
+
+<div class="main-app-content"  [ngClass]="{'rtl': lang == 'rtl' , lightTheme : theme == 'light'}" >
+    <!-- <i (click)=showMenu() class="fas fa-bars"></i> -->
+    <router-outlet></router-outlet>
+    <div id="footer">
+        <p> powered by egyDigital </p>
+    </div>
+</div>

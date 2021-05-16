@@ -9,18 +9,15 @@ import { ItemsService } from '../items.service';
 })
 export class OneItemComponent implements OnInit {
 
-  oneItemData;
+  oneItemData:any;
 
-  constructor(private items:ItemsService,private route: ActivatedRoute) {
-    // const firstParam: string = this.route.snapshot.queryParamMap.get('id');
-    // alert(firstParam);
-    let myData = this.route.snapshot.paramMap.get('data');
-    this.oneItemData = JSON.parse(myData);
+  constructor( service:ItemsService,private route: ActivatedRoute) {
+    this.oneItemData = JSON.parse(localStorage.getItem("oneItem"));
     console.log(this.oneItemData)
-    
   }  
 
   ngOnInit(): void {
+
   }
 
 }

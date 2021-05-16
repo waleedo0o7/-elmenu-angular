@@ -19,38 +19,21 @@ export class AllItemsComponent implements OnInit {
   categoryName;
   allItems;
 
-
-  constructor(private items:ItemsService, private _router: Router) {
-    this.items.getData().subscribe(data=>{
-      this.restaurant =  data;
-      this.categories = this.restaurant.data.categories;
-      this.allItems = this.categories[0].items;
-      this.categoryName = this.categories[0].arName;
-      this.runOwl();
-    })
+  constructor(private service:ItemsService, private _router: Router) {
   }
 
   getCategoryItems(id){
     this.allItems = this.categories[id].items;
     this.categoryName = this.categories[id].arName;
-    console.log(id)
-    console.log(this.allItems)
   }
 
-  // sendItemData(itemData){
-  //   this._router.navigateByUrl("/one-item");
-  //   return this.items.sendItemData(itemData);
-  // }
-  
   sendItemData(itemData){
-    this._router.navigate(['/one-item',{data:JSON.stringify(itemData)}] );
+    this._router.navigate(['/one-item',{id:JSON.stringify(itemData.id)}] );
+    localStorage.setItem("oneItem", JSON.stringify(itemData));
   }
-
-
 
   runOwl(){
     setTimeout( function(){
-
       $('.owl-carousel').owlCarousel({
         loop:true,
         margin:10,
@@ -71,9 +54,21 @@ export class AllItemsComponent implements OnInit {
       }) 
     }, 0)
   }
-   
 
   ngOnInit(): void {
+    this.service.getData().subscribe(data=>{
+      this.restaurant =  data;
+      console.log(this.restaurant)
+      this.categories = this.restaurant.data.categories;
+      this.allItems = this.categories[0].items;
+      this.categoryName = this.categories[0].arName;
+      this.runOwl();
+    });
+    
+  }
+
+  showMenu(){
+    this.service.showMenu();
   }
 
   ngAfterContentInit(){

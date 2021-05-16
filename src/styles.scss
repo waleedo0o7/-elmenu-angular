@@ -1,9 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
 
-body {
+body , .main-app-content{
     color: #ffffff;
     background-color: #10100f;
-    font-family: "Roboto", sans-serif;
+    font-family: "Tajawal", sans-serif;
+}
+
+.main-app-content{
+    min-height: 100vh;
 }
 
 .all-items .one-item {
@@ -18,4 +22,155 @@ body {
 .slider-container .owl-carousel .item-content{
     z-index: 9999;
     cursor: pointer;
+}
+
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-weight: bold;
+}
+
+.slider-container {
+    direction: ltr !important;
+    .owl-carousel .item-content {
+        z-index: 9999;
+        cursor: pointer;
+        background: #171717;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+    .owl-carousel .item-content.active h4 {
+        margin-bottom: 0;
+        border-bottom: unset;
+    }
+    .owl-carousel .item-content.active {
+        border-bottom: 1px solid #c6bf1c;
+    }
+}
+
+.header-container .logo img {
+    border: 3px solid #c6bf1c;
+    padding: 3px;
+    border-radius: 500px;
+}
+
+
+.all-items .one-item .item-details , .all-items .one-item {
+    background: #171717;
+}
+
+.view-one-item {
+    max-width: 700px;
+}
+
+.all-items .one-item .item-image {
+    width: 150px;
+}
+
+.all-items .one-item .item-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+//  RTL
+
+.rtl{
+    direction: rtl;
+    text-align: right;
+
+    .view-one-item .item-details .sizes ul {
+        text-align: right;
+    }
+    .view-one-item .item-details .sizes ul li{        
+        padding-left: 0px;
+        padding-right: 20px;
+    }
+    .view-one-item .item-details .sizes ul li:after {
+        left: unset;
+        right: 0px;
+    }
+}
+
+
+// Light Theme
+
+.lightTheme {
+    background-color: #efefef;
+    color: #10100f;
+
+    .all-items .one-item .item-details {
+        background: #FFF;
+        color: #495057;
+    }
+
+    .slider-container .owl-carousel .item-content{
+        background: #FFF;
+    }
+
+    .all-items .one-item .item-details , .all-items .one-item{
+        background: #FFF;
+
+    }
+
+    .view-one-item .item-details .sizes ul li:after {
+        background-color: #212529;
+    }
+}
+
+
+//  Menu
+
+i.fas.fa-bars {
+    font-size: 32px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 20px;
+    cursor: pointer;
+}
+
+#main-menu{
+    position: fixed;
+    top: -100vh;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9;
+
+    .menu-content {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+            li{
+                a{
+                    color: #fff;
+                    cursor: pointer;
+                    font-size: 26px;
+                }
+            }
+        }
+    }
+    .layer {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+    }
+
+    .layer1{
+        background: #494949;
+    }
+    .layer2{
+        background: #252525;
+        
+    }
+    .layer3{
+        background: #111111;
+    }
+    
 }

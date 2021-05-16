@@ -96,10 +96,8 @@
               "src/favicon.ico",
               "src/assets"
             ],
-            "styles": [
-            ],
-            "scripts": [
-            ]
+            "styles": [],
+            "scripts": []
           }
         },
         "lint": {
@@ -128,8 +126,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "elmenu-angular"
+    }
+  },
+  "defaultProject": "elmenu-angular",
+  "cli": {
+    "analytics": "82b4499d-d0da-4dc7-a255-d97ce2ab5495"
+  }
 }
-
-
