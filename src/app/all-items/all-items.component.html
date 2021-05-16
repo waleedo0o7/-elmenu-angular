@@ -28,6 +28,7 @@
                 <div class="item-content active" (click)=getCategoryItems(index)> 
                     <img class="img-fluid" src="assets/images/{{item.categoryImage}}">
                     <h4> {{item.arName}} </h4> 
+                    <div class="loading"></div>
                 </div>
             </div>
  
@@ -40,12 +41,13 @@
 
               <div class="one-item" *ngFor="let item of allItems" (click)=sendItemData(item)>
                   <div class="item-image">
-                      <img class="img-fluid" src="assets/images/{{item.itemImage}}">
+                      <img class="img-fluid" src="{{imagesLink}}{{item.itemImage}}">
                   </div> <!-- item-image -->
                   <div class="item-details">
                       <h4>  {{item.arName}} </h4>
                       <p> <span class="price"> {{item.price}} </span> <span class="currency">EGP</span> </p>
                   </div> <!-- item-details -->
+                  <div class="loading"></div>
               </div> <!-- one-item --> 
 
             </div> <!-- all-items -->

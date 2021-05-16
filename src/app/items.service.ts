@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import * as $ from 'jquery'
+declare var $: any;
 declare var gsap : any;
 import {HttpClient, HttpClientModule} from '@angular/common/http'
 @Injectable({
@@ -8,8 +10,10 @@ import {HttpClient, HttpClientModule} from '@angular/common/http'
 export class ItemsService {
   restaurant: Object;
   items: any;
-  lang;
-  theme;
+  lang : any;
+  theme : any;
+  showMenuVar = gsap.timeline();
+  imagesLink : any = "http://menuapi.egydigital.net/uploads/";
 
 
 constructor( private http:HttpClient) {
@@ -36,8 +40,6 @@ constructor( private http:HttpClient) {
       {"companyServiceId": 4}
     );
   }
-  
-  showMenuVar = gsap.timeline();
 
   showMenu(){
     this.showMenuVar.to(".layer", {y: '100vh', duration: 1 , ease: "power2" , stagger : 0.1});
@@ -47,5 +49,12 @@ constructor( private http:HttpClient) {
   hideMenu(){
     this.showMenuVar.reverse();
   }
+
+  hideLoading(){
+    setTimeout(function(){
+      $(".loading").fadeOut();
+    },200)
+  }
+
 
 }

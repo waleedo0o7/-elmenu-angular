@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ItemsService} from './items.service';
-
+import * as $ from 'jquery'
+declare var $ : any;
 declare var gsap : any;
 
 @Component({
@@ -57,7 +58,7 @@ export class AppComponent implements OnInit {
   ngOnInit() {
   }
   
-  ngAfterViewInit() {
+  ngAfterViewInit() { 
   }
 
 }

@@ -18,6 +18,7 @@ export class AllItemsComponent implements OnInit {
   categories = [];
   categoryName;
   allItems;
+  imagesLink = this.service.imagesLink;
 
   constructor(private service:ItemsService, private _router: Router) {
   }
@@ -25,11 +26,34 @@ export class AllItemsComponent implements OnInit {
   getCategoryItems(id){
     this.allItems = this.categories[id].items;
     this.categoryName = this.categories[id].arName;
+    this.service.hideLoading();
   }
 
   sendItemData(itemData){
     this._router.navigate(['/one-item',{id:JSON.stringify(itemData.id)}] );
     localStorage.setItem("oneItem", JSON.stringify(itemData));
+  }
+
+
+  ngOnInit(): void {
+    this.service.getData().subscribe(data=>{
+      this.restaurant =  data; 
+      this.categories = this.restaurant.data.categories;
+      this.allItems = this.categories[0].items;
+      this.categoryName = this.categories[0].arName;
+      this.runOwl();
+      this.service.hideLoading();
+    });
+    
+  }
+
+  showMenu(){
+    this.service.showMenu();
+  }
+
+  
+  hideLoading(){
+    $(".loading").fadeOut();
   }
 
   runOwl(){
@@ -54,27 +78,11 @@ export class AllItemsComponent implements OnInit {
       }) 
     }, 0)
   }
-
-  ngOnInit(): void {
-    this.service.getData().subscribe(data=>{
-      this.restaurant =  data;
-      console.log(this.restaurant)
-      this.categories = this.restaurant.data.categories;
-      this.allItems = this.categories[0].items;
-      this.categoryName = this.categories[0].arName;
-      this.runOwl();
-    });
-    
-  }
-
-  showMenu(){
-    this.service.showMenu();
-  }
-
   ngAfterContentInit(){
   }
   
-  ngAfterViewInit() {    
+  ngAfterViewInit() {
+    $("#main-loading").fadeOut();
   }
 
   ngAfterViewChecked(){

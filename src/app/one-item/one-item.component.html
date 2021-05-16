@@ -1,7 +1,7 @@
 <div class="page-content">
     <div class="view-one-item">
         <i routerLink="/all-items" class="fa fa-chevron-left"></i>
-        <img class="img-fluid" src="assets/images/{{oneItemData.itemImage}}">
+        <img class="img-fluid" src="{{imagesLink}}{{oneItemData.itemImage}}">
         <div class="item-details">
             <h4> {{oneItemData.arName}} </h4>
             <p> item desc  - Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since ..</p>
@@ -11,5 +11,6 @@
                 </ul>
             </div>
         </div> <!-- item-details -->
+        <div class="loading"></div>
     </div> <!-- one-item -->
 </div> <!-- page-content -->

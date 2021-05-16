@@ -4,15 +4,25 @@
     <div class="layer layer3">
         <div class="menu-content">
             <ul>
-                <li>  <a class="change-lang"  (click)=changeLang();hideMenu()> Switch Language </a> </li>
-                <li>  <a class="change-theme" (click)=changeTheme();hideMenu()> Switch Theme </a> </li>
-            </ul>
-            
-            
+                <li>  <a class="change-lang"  (click)=changeLang();hideMenu()> تغيير اللغة </a> </li>
+                <li>  <a class="change-theme" (click)=changeTheme();hideMenu()> تغيير الثيم </a> </li>
+            </ul>            
         </div>
     </div>
 </div>
 
+<div id="main-loading">
+    <div class="loading-content">
+        <div class="wrapper">
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="shadow"></div>
+            <div class="shadow"></div>
+            <div class="shadow"></div>
+        </div>
+    </div>
+</div>
 
 <div class="main-app-content"  [ngClass]="{'rtl': lang == 'rtl' , lightTheme : theme == 'light'}" >
     <!-- <i (click)=showMenu() class="fas fa-bars"></i> -->
