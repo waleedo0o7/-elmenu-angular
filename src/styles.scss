@@ -24,8 +24,10 @@ body , .main-app-content{
 .slider-container .owl-carousel .item-content{
     z-index: 9999;
     cursor: pointer;
-}
-
+    img{
+        height: 180px;
+    }
+} 
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     font-weight: bold;
@@ -64,8 +66,12 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     max-width: 700px;
 }
 
-.all-items .one-item .item-image {
-    width: 150px;
+.all-items .one-item .item-image{
+    width: unset;
+    img{
+        width: 200px;
+        height: 120px;
+    }
 }
 
 .all-items .one-item .item-details {

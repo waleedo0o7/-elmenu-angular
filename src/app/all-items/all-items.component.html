@@ -26,7 +26,7 @@
 
             <div class="item" *ngFor="let item of categories ; let index = index ">
                 <div class="item-content active" (click)=getCategoryItems(index)> 
-                    <img class="img-fluid" src="assets/images/{{item.categoryImage}}">
+                    <img class="img-fluid" src="http://menuapi.egydigital.net/uploads/{{item.categoryImage}}">
                     <h4> {{item.arName}} </h4> 
                     <div class="loading"></div>
                 </div>
